@@ -20,9 +20,9 @@
         "stage": "dev",
         "projectId": "devops-agent",
         "clearDatabaseData": true,
-        "devOpsAgentWebhookUrl": "https://event-ai.us-east-1.api.aws/webhook/generic/3c03b38c-ee8b-4e66-b100-f7b3c1184f22",
+        "devOpsAgentWebhookUrl": "{DEVOPS_AGENT_WEBHOOK}",
         "githubRepo": "genai-labs-demo/devops-agent-demo-gh",
-        "githubPat": "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",
+        "githubPat": "{PAT_HERE}",
         "accounts": {
             "dev": {
                 "number": "{ACCOUNT_NUMBER}",

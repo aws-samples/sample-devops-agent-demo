@@ -73,16 +73,24 @@ git clone [repository-url]
 cd [repository-name]
 npm install
 
-# 2. Add your AWS account to cdk.json (if not already listed)
-# Open cdk.json and add a new entry under context.accounts:
+# 2. Update cdk.json context values
+# Open cdk.json and fill in the placeholder values under "context":
 #
-#   "my-account": {
-#       "number": "123456789012",
-#       "region": "us-east-1",
-#       "midway": true
+#   "devOpsAgentWebhookUrl": "{DEVOPS_AGENT_WEBHOOK}"  # your DevOps Agent webhook URL
+#   "githubRepo": "genai-labs-demo/devops-agent-demo-gh"  # your GitHub repo (owner/name)
+#   "githubPat": "{PAT_HERE}"                          # your GitHub personal access token
+#
+# Then add/update your AWS account under context.accounts:
+#
+#   "accounts": {
+#       "dev": {
+#           "number": "{ACCOUNT_NUMBER}",             # your 12-digit AWS account number
+#           "region": "us-east-1",
+#           "midway": false
+#       }
 #   }
 #
-# The alias (e.g. "my-account") is what you select when running the kit CLI.
+# The alias (e.g. "dev") is what you select when running the kit CLI.
 # Set "midway" to true if using Federate/Midway authentication.
 
 # 3. Deploy to AWS using kit CLI
@@ -90,7 +98,7 @@ npm run kit
 # Select your account, then choose "Deploy CDK Stack(s)"
 
 # Or deploy all stacks directly
-npm run kit -- deploy my-account --all
+npm run kit -- deploy dev --all
 
 # 4. Store the DevOps Agent webhook secret in AWS Secrets Manager
 # After the first deploy, a Secrets Manager secret named "{stage}-devops-agent-webhookSecret"
