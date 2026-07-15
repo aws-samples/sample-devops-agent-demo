@@ -25,17 +25,7 @@
         "githubPat": "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",
         "accounts": {
             "dev": {
-                "number": "357323382338",
-                "region": "us-east-1",
-                "midway": true
-            },        
-            "hmmorgen": {
-                "number": "630469112937",
-                "region": "us-east-1",
-                "midway": false
-            },
-            "test": {
-                "number": "630469112937",
+                "number": "{ACCOUNT_NUMBER}",
                 "region": "us-east-1",
                 "midway": false
             }
