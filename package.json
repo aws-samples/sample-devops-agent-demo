@@ -88,7 +88,7 @@
         "@aws/pdk": "^0.26.15",
         "@cdklabs/generative-ai-cdk-constructs": "^0.1.309",
         "aws-appsync": "^4.1.10",
-        "aws-cdk-lib": "^2.241.0",
+        "aws-cdk-lib": "^2.262.0",
         "cdk-nag": "^2.37.53",
         "constructs": "^10.4.2",
         "pg": "^8.13.1",
