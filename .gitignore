@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# CDK
+cdk.out/
+cdk.context.json
+
+# Build output
+build/
+dist/
+*.js.map
+
+# Environment / secrets
+.env
+.env.*
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Logs
+*.log
+build.log
+
+# OS files
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+*.swp
+
+# Export artifact
+export.zip

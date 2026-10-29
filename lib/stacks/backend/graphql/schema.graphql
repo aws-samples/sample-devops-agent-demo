@@ -1,0 +1,80 @@
+"""
+GraphQL schema for CRM Demo real-time events.
+Supports failure event streaming via AppSync subscriptions.
+"""
+
+type FailureEvent {
+    id: ID!
+    timestamp: AWSTimestamp!
+    scenarioType: String!
+    errorType: String!
+    errorMessage: String!
+    service: String
+    correlationId: String
+    rawMessage: String
+}
+
+type ScenarioChange {
+    id: ID!
+    timestamp: AWSTimestamp!
+    scenarioType: String!
+    action: String!
+    severity: String
+    userId: String
+}
+
+"""
+Real-time metrics update for scenario monitoring cards.
+Published every 5 seconds when a scenario is active.
+"""
+type MetricsUpdate {
+    id: ID!
+    timestamp: AWSTimestamp!
+    activeScenario: String
+    sqsQueueDepth: Int!
+    lambdaErrorRate: Float!
+    rdsCpuUtilization: Float!
+    systemHealth: String!
+}
+
+type Mutation {
+    publishFailureEvent(
+        scenarioType: String!
+        errorType: String!
+        errorMessage: String!
+        service: String
+        correlationId: String
+        rawMessage: String
+    ): FailureEvent
+
+    publishScenarioChange(
+        scenarioType: String!
+        action: String!
+        severity: String
+        userId: String
+    ): ScenarioChange
+
+    publishMetricsUpdate(
+        activeScenario: String
+        sqsQueueDepth: Int!
+        lambdaErrorRate: Float!
+        rdsCpuUtilization: Float!
+        systemHealth: String!
+    ): MetricsUpdate
+}
+
+type Subscription {
+    onFailureEvent: FailureEvent
+        @aws_subscribe(mutations: ["publishFailureEvent"])
+    
+    onScenarioChange: ScenarioChange
+        @aws_subscribe(mutations: ["publishScenarioChange"])
+    
+    onMetricsUpdate: MetricsUpdate
+        @aws_subscribe(mutations: ["publishMetricsUpdate"])
+}
+
+type Query {
+    # Placeholder query - AppSync requires at least one query
+    _placeholder: String
+}

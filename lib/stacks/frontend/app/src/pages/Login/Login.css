@@ -1,0 +1,106 @@
+/* Amplify Authenticator overrides — login card */
+.login-card [data-amplify-authenticator] {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+}
+.login-card [data-amplify-authenticator] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.login-card [data-amplify-router] {
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+.login-card [data-amplify-form] {
+    padding: 0 24px 16px !important;
+}
+.login-card .amplify-authenticator {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 0 !important;
+}
+.login-card [data-amplify-authenticator] input {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #e2e8f0 !important;
+    border-radius: 8px !important;
+}
+.login-card [data-amplify-authenticator] input::placeholder {
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+.login-card [data-amplify-authenticator] input:focus {
+    border-color: #7c3aed !important;
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.3) !important;
+}
+
+.login-card [data-amplify-authenticator] label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+.login-card [data-amplify-authenticator] button[type="submit"] {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+.login-card [data-amplify-authenticator] button[type="submit"]:hover {
+    background: linear-gradient(135deg, #6d28d9, #5b21b6) !important;
+}
+.login-card [data-amplify-authenticator] [data-amplify-footer] {
+    display: none !important;
+}
+.login-card .amplify-flex {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.login-card [class*="amplify"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+.login-card [data-amplify-authenticator] [data-amplify-container] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+}
+.login-card .amplify-input {
+    padding-right: 40px !important;
+}
+.login-card .amplify-field-group__outer-end {
+    position: absolute !important;
+    right: 28px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+.login-card .amplify-field-group {
+    position: relative !important;
+}
+.login-card .amplify-field-group__outer-end button {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    padding: 4px !important;
+}
+
+/* Branding block */
+.login-branding {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* Shimmer animation for the top accent bar */
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
